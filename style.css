@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+ margin: 0px;
+ padding: 0px;
+ box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+
+}
+
+:root{
+    --lead:#212121;
+    --gold-finger:#F2BD12;
+    --eye-ball:#FFFDF7;
+    --hint-yellow:#FCF1CC;
+    --pure-white:#FFF;
+}
+.flex{
+
+    display: flex;
+    align-items: center;
+}
+.between{
+    justify-content: space-between;
+}
+.gap-3{
+    gap: 3rem;
+}
+.gap-2{
+    gap: 2rem;
+}
+.wraper{
+    max-width: 1400px;
+   
+    margin: auto;
+    padding-inline: 1.5rem;
+
+}
+body{
+    background-color: var(--lead);
+}
+
+a{
+    font-size: 1rem;
+    text-decoration: none;
+    color:var(--lead) ;
+
+
+}
+
+li{
+    list-style: none;
+}
+
+.navbar{
+    min-height:14vh ;
+}
+.logo{
+    font-size: 2rem;
+    font-weight: bold;
+    color:rgb(136, 205, 40) ;
+}
+.button{
+     display: inline-block;
+     padding:1rem 2rem;
+     background-color: rgb(29, 54, 218);
+     border-radius: 1.5rem;
+     color: var(--pure-white);
+     box-shadow: rgb(0, 0, 0,0.1) 0 2px  1px;
+     transition: .3s ease-in-out;
+}
+.button:hover{
+    background: rgb(17, 192, 212);
+}
+.cart-icon{
+    color: var(--lead);
+    font-size: 1.3rem;
+}
+ 
