@@ -10,7 +10,7 @@
 }
 
 :root{
-    --lead:#212121;
+    --lead:#121111;
     --gold-finger:#F2BD12;
     --eye-ball:#FFFDF7;
     --hint-yellow:#FCF1CC;
@@ -44,13 +44,14 @@ body{
 a{
     font-size: 1rem;
     text-decoration: none;
-    color:var(--lead) ;
+ 
 
 
 }
 
 li{
     list-style: none;
+    
 }
 
 .navbar{
@@ -60,6 +61,7 @@ li{
     font-size: 2rem;
     font-weight: bold;
     color:rgb(136, 205, 40) ;
+    padding-right: 30px;
 }
 .button{
      display: inline-block;
@@ -73,8 +75,19 @@ li{
 .button:hover{
     background: rgb(17, 192, 212);
 }
-.cart-icon{
-    color: var(--lead);
-    font-size: 1.3rem;
-}
+
+
+.navbar .navlist ul li a{
+  
+   
+  color: rgb(95, 168, 114); /* ✅ This changes the text color */
+  font-weight: bold;
  
+   
+ }
+  .navlist {
+    gap:30px;
+ }
+ .navbar .nav{
+    padding-left: 550px;
+ }
