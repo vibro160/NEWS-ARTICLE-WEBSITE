@@ -21,9 +21,21 @@ function fetchNews(query){
     })
     .catch(error => {
       console.error('Error fetching news:', error);
-    });
+    })
+    .catch(error => console.error('Error fetching news:', error));
 
 }
 
 
 const newscontainer=document.getElementById("newscontainer");
+data.articles.array.forEach(articles => {
+  const newscard=document.createElement("div");
+  newscard.classList.add("news-card");
+  newscard.innerHTML= `
+  <h1>${articles.title}</h1>
+  <p>${articles.description || "No Description "}</p>
+   <a href="${articles.url}" target="_blank">Read more</a>
+  `;
+  newscontainer.appendChild(newscard);
+  
+});

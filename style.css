@@ -129,4 +129,27 @@ li{
     
     color: black;
 }
+
+
+
+#newscontainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.news-card {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.news-card a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
  
