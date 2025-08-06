@@ -69,7 +69,7 @@ li{
 .button{
      display: inline-block;
      padding:1rem 2rem;
-     background-color: rgba(33, 54, 191, 0.4);
+     background-color: rgba(5, 5, 8, 0.4);
      border-radius: 1.5rem;
      color: var(--pure-white);
      box-shadow: rgb(0, 0, 0,0.1) 0 2px  1px;
