@@ -14,7 +14,7 @@ function fetchNews(query){
     const Query = document.getElementById("searchInput").value.trim();
    const url = `https://newsapi.org/v2/everything?q=${Query}&apiKey=${apikey}`;
     fetch(url)
-    .then(response => response.json())
+    .then(response => response.json()) //coverts into readable format 
     .then(data => {
       const articles = data.articles;
       displayNews(articles);
@@ -24,3 +24,6 @@ function fetchNews(query){
     });
 
 }
+
+
+const newscontainer=document.getElementById("newscontainer");
