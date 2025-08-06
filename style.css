@@ -124,9 +124,10 @@ li{
   transform: translateY(-50%);
   color: gray;
 }
+
 #searchInput:hover{
     background-color:rgb(182, 193, 206) ;
-    
+    transform: scale(1.05);
     color: black;
 }
 
@@ -153,6 +154,14 @@ li{
 }
 .news-card:hover{
     transform: scale(1.02);
+}
+.news-card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.news-card p {
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 .news-card a {
   color: #4fc3f7;
