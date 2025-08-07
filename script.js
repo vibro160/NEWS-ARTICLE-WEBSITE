@@ -42,7 +42,8 @@ searchinput.addEventListener("keypress", function (e) {
 function fetchNews(query) {
   newscontainer.innerHTML = "<p style='color:white;'>Loading...</p>"; // clear and show loading
  const apikey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
- const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apikey}`;
+ const url =  `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apikey}`;
+;
 
   fetch(url)
     .then(res => res.json())
@@ -75,4 +76,10 @@ function displayArticles(articles) {
     newscontainer.appendChild(newsCard);
   });
 }
+
+window.onload = () => {
+  const defaultQuery = "technology OR science OR AI"; // you can change this to anything like "technology"
+  fetchNews(defaultQuery);
+};
+
 
