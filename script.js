@@ -1,56 +1,24 @@
 const searchinput = document.getElementById("searchInput");
+const newscontainer = document.getElementById("newscontainer");
+
 searchinput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    const query = searchinput.value.trim();//trim removes whitespaces form the both starting and ending
+    const query = searchinput.value.trim();
     if (query) {
       fetchNews(query);
     }
   }
 });
 
-
-//this below programme can not clear the old news
-
-// function fetchNews(query) {
- 
-//   const apikey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
-//   // const Query = document.getElementById("searchInput").value.trim();
-//   const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apikey}`;
-//   fetch(url)
-//     .then(response => response.json()) //coverts into readable format 
-//     .then(data => {
-   
-
-//   const newscontainer = document.getElementById("newscontainer");
-//   data.articles.forEach(articles => {
-//     const newscard = document.createElement("div");
-//     newscard.classList.add("news-card");
-//     newscard.innerHTML = `
-//   <h1>${articles.title}</h1>
-//   <p>${articles.description || "No Description "}</p>
-//    <a href="${articles.url}" >Read more</a> `;// target="_blank" makes the link open in another tab
-//     newscontainer.appendChild(newscard);
-
-//   });
-
-// })
-//     .catch (error => {
-//   console.error('Error fetching news:', error);
-// });
-
-// }
 function fetchNews(query) {
-  newscontainer.innerHTML = "<p style='color:white;'>Loading...</p>"; // clear and show loading
- const apikey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
- const url =  `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apikey}`;
-;
+   newscontainer.innerHTML = "<p style='color:white;'>Loading...</p>";
+  const apikey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
+  const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apikey}`;
 
   fetch(url)
     .then(res => res.json())
-    .then(data => { //data → is the whole response object.
-      if (Array.isArray(data.articles) && data.articles.length > 0) {//data.articles → is an array containing multiple article objects.
-
-
+    .then(data => {
+      if (Array.isArray(data.articles) && data.articles.length > 0) {
         displayArticles(data.articles);
       } else {
         newscontainer.innerHTML = "<p style='color:white;'>No results found.</p>";
@@ -61,8 +29,9 @@ function fetchNews(query) {
       console.error("Error:", err);
     });
 }
+
 function displayArticles(articles) {
-  newscontainer.innerHTML = ""; // Clear old news
+  newscontainer.innerHTML = "";
   articles.forEach(article => {
     const newsCard = document.createElement("div");
     newsCard.classList.add("news-card");
@@ -78,8 +47,27 @@ function displayArticles(articles) {
 }
 
 window.onload = () => {
-  const defaultQuery = "technology OR science OR AI"; // you can change this to anything like "technology"
+   console.log("Window loaded  fetching default news");
+  const defaultQuery = "technology"; // safer default
   fetchNews(defaultQuery);
 };
 
+function fetchCategoryNews(category) {
+  const apiKey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      if (data.status === "ok") {
+        displayArticles(data.articles);
+      } else {
+        console.error("API error:", data);
+      }
+    })
+    .catch(error => {
+      console.error("Fetch error:", error);
+    });
+}
 

@@ -10,7 +10,7 @@
 }
 
 :root{
-    --lead:#787373;
+    --lead:#2a2727;
     --gold-finger:#F2BD12;
     --eye-ball:#FFFDF7;
     --hint-yellow:#FCF1CC;
@@ -60,7 +60,7 @@ li{
 .logo{
     font-size: 3rem;
     font-weight: bold;
-    color:rgb(136, 205, 40) ;
+    color:rgb(30, 45, 201) ;
     padding-right: 30px;
 }
 .ds-action{
@@ -90,19 +90,26 @@ li{
    
  }
  .navlist a {
-  color: rgb(25, 31, 26);
+ 
+   background-color: var(--lead);
+  
+  color: #253cc0;
+  border-radius: 10px;
+  font-size: medium;
+  color: rgb(55, 153, 72);
   transition: 0.3s ease-in-out;
 }
 .navlist a:hover{
    background-color: #11c0d4;
+   
 }
 
   .navlist {
-    gap:30px;
+    gap:20px;
     
  }
  .navbar .nav{
-    padding-left:170px;
+    padding-left:130px;
     padding-right: 20px;
  }
  .search{
@@ -124,7 +131,7 @@ li{
 }
 .search-icon {
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 60%;
   transform: translateY(-50%);
   color: gray;
@@ -193,5 +200,6 @@ li{
 
 .catagories button:hover{
   background-color: #11c0d4;
+     transform: scale(1.05);
 }
  
