@@ -10,7 +10,7 @@
 }
 
 :root{
-    --lead:#4e4a4a;
+    --lead:#787373;
     --gold-finger:#F2BD12;
     --eye-ball:#FFFDF7;
     --hint-yellow:#FCF1CC;
@@ -90,8 +90,13 @@ li{
    
  }
  .navlist a {
-  color: rgb(95, 168, 114);
+  color: rgb(25, 31, 26);
+  transition: 0.3s ease-in-out;
 }
+.navlist a:hover{
+   background-color: #11c0d4;
+}
+
   .navlist {
     gap:30px;
     
@@ -176,7 +181,17 @@ li{
 }
 
 .catagories button{
-  
+  padding: 10px 20px;
+  width: 130px;
+  background-color: #141212;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  color: #253cc0;
+  border-radius: 10px;
+  font-size: medium;
+  transition: 0.3s ease-in-out;
 }
 
+.catagories button:hover{
+  background-color: #11c0d4;
+}
  
