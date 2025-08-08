@@ -1,5 +1,7 @@
 const searchinput = document.getElementById("searchInput");
 const newscontainer = document.getElementById("newscontainer");
+// const imageUrl = article.urlToImage || "default.jpg"; // fallback image
+
 
 searchinput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
