@@ -35,10 +35,18 @@ function displayArticles(articles) {
   articles.forEach(article => {
     const newsCard = document.createElement("div");
     newsCard.classList.add("news-card");
-
+    const author=article.author ?article.author:"unknown author";
+    const date=article.publishedAt?new Date(article.publishedAt).toLocaleDateString("en-IN",{
+      year:"numeric",
+      month:"short",
+      day:"numeric",
+    })
+    :"Date not available";
     newsCard.innerHTML = `
       <h1>${article.title}</h1>
       <p>${article.description || "No description available."}</p>
+      <p><strong>Author:</strong> ${author}</p>
+      <p><strong>Published:</strong> ${date}</p>
       <a href="${article.url}" target="_blank">Read more</a>
     `;
 
