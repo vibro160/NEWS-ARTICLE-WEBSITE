@@ -242,6 +242,9 @@ li {
   text-decoration: none;
   color: #00bfff;
   font-weight: bold;
+  
+
+
 }
 
 .news-card a:hover {
@@ -281,7 +284,7 @@ li {
     width: 50px;
     height: 20px;
 }
-.ddark-mode{
+/* .ddark-mode{
    background-Color:#121212;
     margin-left : 15px;
    padding-left: 0px;
@@ -298,14 +301,14 @@ li {
     border-radius: 5px;
     width: 50px;
     height: 20px;
-}
+} */
 body.dark-mode {
   background-color: #121212;
   color: #eee;
 }
 
 .news-card {
-  background-color: white;
+  background-color: rgb(129, 120, 120);
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);

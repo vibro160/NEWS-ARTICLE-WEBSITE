@@ -30,8 +30,10 @@ function fetchNews(query) {
       newscontainer.innerHTML = "<p style='color:white;'>Error fetching news.</p>";
       console.error("Error:", err);
     });
-}
 
+  }
+  
+ 
 function displayArticles(articles) {
   newscontainer.innerHTML = "";
   articles.forEach(article => {
@@ -106,7 +108,6 @@ themeToggle.addEventListener("click", () => {
      document.getElementById("theme-toggle").classlist.add("ddark-mode");
   }
 });
-
 
 
 
