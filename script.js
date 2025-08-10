@@ -13,7 +13,7 @@ searchinput.addEventListener("keypress", function (e) {
 });
 
 function fetchNews(query) {
-   newscontainer.innerHTML = "<p style='color:white;'>Loading...</p>";
+  newscontainer.innerHTML = "<p style='color:white;'>Loading...</p>";
   const apikey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
   const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(query)}&apiKey=${apikey}`;
 
@@ -37,13 +37,13 @@ function displayArticles(articles) {
   articles.forEach(article => {
     const newsCard = document.createElement("div");
     newsCard.classList.add("news-card");
-    const author=article.author ?article.author:"unknown author";
-    const date=article.publishedAt?new Date(article.publishedAt).toLocaleDateString("en-IN",{
-      year:"numeric",
-      month:"short",
-      day:"numeric",
+    const author = article.author ? article.author : "unknown author";
+    const date = article.publishedAt ? new Date(article.publishedAt).toLocaleDateString("en-IN", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
     })
-    :"Date not available";
+      : "Date not available";
     newsCard.innerHTML = `
       <h1>${article.title}</h1>
       <p>${article.description || "No description available."}</p>
@@ -57,7 +57,7 @@ function displayArticles(articles) {
 }
 
 window.onload = () => {
-   console.log("Window loaded  fetching default news");
+  console.log("Window loaded  fetching default news");
   const defaultQuery = "technology"; // safer default
   fetchNews(defaultQuery);
 };
@@ -98,9 +98,17 @@ themeToggle.addEventListener("click", () => {
   if (document.body.classList.contains("dark-mode")) {
     localStorage.setItem("theme", "dark");
     themeToggle.textContent = "☀️ ";
+   document.getElementById("theme-toggle").classlist.add("light-mode");
+
   } else {
     localStorage.setItem("theme", "light");
     themeToggle.textContent = "🌙 ";
+     document.getElementById("theme-toggle").classlist.add("ddark-mode");
   }
 });
+
+
+
+
+
 

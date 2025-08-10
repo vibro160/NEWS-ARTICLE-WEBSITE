@@ -273,14 +273,31 @@ li {
     color: #010101;
 }
 #theme-toggle{
-  margin-left: 15px;
-  padding-left: 0px;
- text-align: end;
- border-radius: 5px;
-  width: 50px;
-  height: 20px;
-  background-color: #0a0a0a;
-   box-shadow: 0 0px 12px rgba(17, 172, 199, 0.4);
+  background-Color:#121212;
+    margin-left : 15px;
+   padding-left: 0px;
+    text-align: end;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
+}
+.ddark-mode{
+   background-Color:#121212;
+    margin-left : 15px;
+   padding-left: 0px;
+    text-align: end;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
+}
+ .light-mode{
+   background-Color:#e4dada;
+    margin-left : 15px;
+   padding-left: 0px;
+    text-align: start;
+    border-radius: 5px;
+    width: 50px;
+    height: 20px;
 }
 body.dark-mode {
   background-color: #121212;
@@ -294,8 +311,8 @@ body.dark-mode {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Dark mode card style */
+
 body.dark-mode .news-card {
   background-color: #1e1e1e;
   box-shadow: 0 4px 8px rgba(255,255,255,0.1);
-}
+} 
