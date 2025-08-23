@@ -124,5 +124,38 @@ document.getElementById("saveSources").addEventListener("click",()=>{
 })
 
 
+//fetch news from saved sources
+
+function fetchnewsfromsavedsources(){
+
+const sources=JSON.parse(localStorage.getItem("favouritesources")) || [];
+// || []--> make sure we get a null array 
+
+if(sources.length==0){
+alert("NO SOURCES SELECTED");
+return;
+}
+const apiKey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
+const url = `https://newsapi.org/v2/top-headlines?country=us&category=${sources.join(",")}&apiKey=${apiKey}`;
+
+
+fetch(url)
+.then(res=>res.JSON())
+.then(data=>{
+  if(data.articles.length===0){
+    console.log("NO NEWS FOUND")
+
+  }else{
+    displayArticles(data.articles);
+  }
+})
+.catch(err=>console.error("Error Fetching NEws",err));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchnewsfromsavedsources();
+});
+
+
 
 
