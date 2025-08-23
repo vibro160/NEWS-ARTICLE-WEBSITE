@@ -110,6 +110,19 @@ themeToggle.addEventListener("click", () => {
 });
 
 
+document.getElementById("saveSources").addEventListener("click",()=>{
+  const checkboxes=document.querySelectorAll("#sources input[type='checkbox']");
+  let selectedsource=[];
+  checkboxes.forEach(checkbox => {
+    if(checkbox.checked){
+      selectedsource.push(checkbox.value);
+    
+    }
+  });
+    localStorage.setItem("favouritesources",JSON.stringify(selectedsource));
+     alert("Sources saved!");
+})
+
 
 
 

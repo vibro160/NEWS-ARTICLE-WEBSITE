@@ -67,7 +67,14 @@
         <button onclick="fetchCategoryNews('business')">Business</button>
         <button onclick="fetchCategoryNews('entertainment')">Entertainment</button>
     </div>
-
+<div id="sources">
+    <h1>Select Your Favourite Sources....</h1>
+    <label><input type="checkbox" value="bbc-news"> BBC News</label>
+  <label><input type="checkbox" value="cnn"> CNN</label>
+  <label><input type="checkbox" value="techcrunch"> TechCrunch</label>
+  <label><input type="checkbox" value="espn"> ESPN</label>
+  <button id="saveSources">Save</button>
+</div>
     <div id="newscontainer">
        <div class="news-card">
         <img src="${imageUrl}" alt="News Image">
