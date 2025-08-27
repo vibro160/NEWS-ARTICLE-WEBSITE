@@ -44,7 +44,8 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0);
+  /* background: linear-gradient(120deg, #6a5050, #304956); */
+    background: url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png');
 }
 
 a {
@@ -74,7 +75,14 @@ li {
 .ds-action {
   padding: none;
 }
+.ds-action .hamburger {
+    font-size: 1.5rem;
+    display: none;
 
+}
+.mobile-menu {
+    display: none;
+}
 .button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -328,3 +336,55 @@ body.dark-mode .news-card {
   background-color: #1e1e1e;
   box-shadow: 0 4px 8px rgba(255,255,255,0.1);
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:780px) {
+
+    .navlist,
+    .button {
+        display: none;
+    }
+
+    .ds-action .hamburger {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: absolute;
+        top: 20%;
+        left: -100%;
+        transform: translateX(-50%);
+        width: 20rem;
+        padding: 2rem;
+        background: #FFFDF7;
+        border: .1rem solid var(--gold-finger);
+        border-radius: 15px;
+        box-shadow: rgba(29, 28, 28, 0.05) 8px 8px 5px,
+            rgba(113, 112, 112, 0.05) 8px 8px 8px inset;
+        transition: all .5s ease-in-out;
+
+
+
+    }
+
+    .mobile-menu-active {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+  }
