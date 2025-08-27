@@ -110,51 +110,51 @@ themeToggle.addEventListener("click", () => {
 });
 
 
-document.getElementById("saveSources").addEventListener("click",()=>{
-  const checkboxes=document.querySelectorAll("#sources input[type='checkbox']");
-  let selectedsource=[];
-  checkboxes.forEach(checkbox => {
-    if(checkbox.checked){
-      selectedsource.push(checkbox.value);
+// document.getElementById("saveSources").addEventListener("click",()=>{
+//   const checkboxes=document.querySelectorAll("#sources input[type='checkbox']");
+//   let selectedsource=[];
+//   checkboxes.forEach(checkbox => {
+//     if(checkbox.checked){
+//       selectedsource.push(checkbox.value);
     
-    }
-  });
-    localStorage.setItem("favouritesources",JSON.stringify(selectedsource));
-     alert("Sources saved!");
-})
+//     }
+//   });
+//     localStorage.setItem("favouritesources",JSON.stringify(selectedsource));
+//      alert("Sources saved!");
+// })
 
 
 //fetch news from saved sources
 
-function fetchnewsfromsavedsources(){
+// function fetchnewsfromsavedsources(){
 
-const sources=JSON.parse(localStorage.getItem("favouritesources")) || [];
-// || []--> make sure we get a null array 
+// const sources=JSON.parse(localStorage.getItem("favouritesources")) || [];
+// // || []--> make sure we get a null array 
 
-if(sources.length==0){
-alert("NO SOURCES SELECTED");
-return;
-}
-const apiKey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
-const url = `https://newsapi.org/v2/top-headlines?country=us&category=${sources.join(",")}&apiKey=${apiKey}`;
+// if(sources.length==0){
+// alert("NO SOURCES SELECTED");
+// return;
+// }
+// const apiKey = 'e2b2fe87b91f441ab0e1df7c45e1c2c2';
+// const url = `https://newsapi.org/v2/top-headlines?country=us&category=${sources.join(",")}&apiKey=${apiKey}`;
 
 
-fetch(url)
-.then(res=>res.JSON())
-.then(data=>{
-  if(data.articles.length===0){
-    console.log("NO NEWS FOUND")
+// fetch(url)
+// .then(res=>res.JSON())
+// .then(data=>{
+//   if(data.articles.length===0){
+//     console.log("NO NEWS FOUND")
 
-  }else{
-    displayArticles(data.articles);
-  }
-})
-.catch(err=>console.error("Error Fetching NEws",err));
-}
+//   }else{
+//     displayArticles(data.articles);
+//   }
+// })
+// .catch(err=>console.error("Error Fetching NEws",err));
+// }
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchnewsfromsavedsources();
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   fetchnewsfromsavedsources();
+// });
 
 
 
@@ -172,7 +172,10 @@ function displaysources(sources){
 }
 
 function savefavourite(){
-  
+  const checkboxes=document.querySelectorAll("#sourcesContainer input:checkbox");
+  const selected=Array.from(checkboxes).map(cb=>cb.value);
+  localStorage.setItem("favouritesources",JSON.stringify(selected));
+  alert("slected items save")
 }
 
 function fetchsources(){
