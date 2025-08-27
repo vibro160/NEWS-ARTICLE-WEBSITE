@@ -23,7 +23,7 @@
                 <i class="fa fa-search search-icon"></i>
 
             </div>
-              <button id="theme-toggle">🌙 </button>
+            <button id="theme-toggle">🌙 </button>
 
             <div class="nav">
                 <ul class="navlist flex  ">
@@ -58,7 +58,7 @@
 
 
         </nav>
-<!-- newscatogories -->
+        <!-- newscatogories -->
     </header>
     <div class="catagories">
         <button onclick="fetchCategoryNews('technology')">Technology</button>
@@ -67,22 +67,32 @@
         <button onclick="fetchCategoryNews('business')">Business</button>
         <button onclick="fetchCategoryNews('entertainment')">Entertainment</button>
     </div>
-<div id="sources">
-    <h1>Select Your Favourite Sources....</h1>
-    <label><input type="checkbox" value="bbc-news"> BBC News</label>
-  <label><input type="checkbox" value="cnn"> CNN</label>
-  <label><input type="checkbox" value="techcrunch"> TechCrunch</label>
-  <label><input type="checkbox" value="espn"> ESPN</label>
-  <button id="saveSources">Save</button>
-</div>
+    <div id="sources">
+        <h1>Select Your Favourite Sources....</h1>
+        <label><input type="checkbox" value="bbc-news"> BBC News</label>
+        <label><input type="checkbox" value="cnn"> CNN</label>
+        <label><input type="checkbox" value="techcrunch"> TechCrunch</label>
+        <label><input type="checkbox" value="espn"> ESPN</label>
+        <button id="saveSources">Save</button>
+        <!-- <button onclick="fetchnewsfromsavedsources()">My Sources</button> -->
+
+    </div>
+
+    <div class="src-container">
+        <div id="sourcesContainer"></div>
+        <button onclick="saveFavoriteSources()">Save Favorites</button>
+        <button onclick="fetchFavoriteSourcesNews()">My Sources</button>
+    </div>
+
+
     <div id="newscontainer">
-       <div class="news-card">
-        <img src="${imageUrl}" alt="News Image">
-        <h1>${article.title}</h1>
-        <small>By ${author} | ${date}</small>
-        <p>${article.description || "No description available."}</p>
-        <a href="${article.url}" target="_blank">Read more</a>
-       </div>
+        <div class="news-card">
+            <img src="${imageUrl}" alt="News Image">
+            <h1>${article.title}</h1>
+            <small>By ${author} | ${date}</small>
+            <p>${article.description || "No description available."}</p>
+            <a href="${article.url}" target="_blank">Read more</a>
+        </div>
     </div>
 
     <script src="script.js"></script>

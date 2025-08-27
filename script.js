@@ -158,4 +158,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+function displaysources(sources){
+  const conatiner=document.getElementsById("sourcesContainer");
+  conatiner.innerHTML=" ";
+  sources.forEach(source=>{
+    const div=document.createElement("div");
+    div.innerHTML=`
+    <lable>
+    <input type="checkbox" value="${source.id}" /> ${source.name}
+    </lable>`;
+    conatiner.appendChild(div);
+  })
+}
+
+function savefavourite(){
+  
+}
+
+function fetchsources(){
+    const url = `https://newsapi.org/v2/top-headlines/sources?apiKey=${apiKey}`;
+
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      if(data.sources && data.sources.length>0){
+        displaysources(data.sources);
+      }
+    })
+  .catch(err=>console.error("Error:",err));
+    
+}
+
+
+
 
