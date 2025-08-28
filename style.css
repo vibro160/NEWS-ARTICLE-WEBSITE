@@ -387,4 +387,35 @@ body.dark-mode .news-card {
         left: 50%;
         transform: translateX(-50%);
     }
+    .search input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+#newscontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+  
+.news-card {
+ 
+  flex-direction:row;
+  background-color: #330c3a;
+  color: white;
+  margin-left: 20px ;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
   }
